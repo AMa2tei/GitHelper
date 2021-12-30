@@ -26,14 +26,15 @@ void MainWindow::on_pushButtonValidatePath_clicked()
     QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init";
     system(commandeQString.toStdString().c_str());
     QDir directorie(ui->lineEditPath->text());
-    ui->comboBoxFilesInDirectory->addItems(directorie.entryList(QDir::NoFilter, QDir::Name));
+    ui->comboBoxFilesInDirectory->addItems(directorie.entryList(QDir::Files, QDir::Name));
 }
 
 void MainWindow::on_pushButtonAddComit_clicked()
 {
     QString commandeQString;
     if(ui->lineEditCommitMessage->text().isEmpty()) {
-        commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"Updated " + ui->comboBoxFilesInDirectory->itemText(ui->comboBoxFilesInDirectory->currentIndex()) + "\"" +
+        commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"Updated " +
+                ui->comboBoxFilesInDirectory->itemText(ui->comboBoxFilesInDirectory->currentIndex()) + "\"" +
                 " && git branch -M main && git push -u origin main";
     }
     else {

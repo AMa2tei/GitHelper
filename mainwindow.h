@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButtonGitStatus_clicked();
 
+    void on_lineEditCommitMessage_textChanged(const QString &arg1);
+
 private:
     Ui::MainWindow *ui;
 };

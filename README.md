@@ -8,5 +8,5 @@ Pour l'utiliser :
 fonctionnalités actuellement disponible :
 - Indiquer le répertoire
 - Indiquer le dépot distant (remote origin)
-- Commit avec un message prédéfini
+- Commit avec un message prédéfini ou un message personnalisé
 
