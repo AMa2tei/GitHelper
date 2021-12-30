@@ -172,7 +172,7 @@
           <string>Working Files</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QPushButton" name="pushButtonAddComit">
             <property name="text">
              <string>⏴Branches &lt;-- git commit -a</string>
@@ -189,12 +189,15 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="3" column="0">
            <widget class="QPushButton" name="pushButtonGitStatus">
             <property name="text">
              <string>git status</string>
             </property>
            </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QComboBox" name="comboBoxFilesInDirectory"/>
           </item>
          </layout>
         </widget>
