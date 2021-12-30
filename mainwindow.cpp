@@ -54,13 +54,6 @@ void MainWindow::on_pushButtonGitPush_clicked()
 }
 
 
-void MainWindow::on_pushButtonGitStatus_clicked()
-{
-    QString commandeQString = "cd " + path + " && git status";
-    system(commandeQString.toStdString().c_str());
-}
-
-
 void MainWindow::on_lineEditCommitMessage_textChanged(const QString &arg1)
 {
     ui->lineEditCommitMessage->text().isEmpty() ? ui->comboBoxFilesInDirectory->setEnabled(true) : ui->comboBoxFilesInDirectory->setEnabled(false);

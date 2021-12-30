@@ -22,8 +22,6 @@ private slots:
 
     void on_pushButtonGitPush_clicked();
 
-    void on_pushButtonGitStatus_clicked();
-
     void on_lineEditCommitMessage_textChanged(const QString &arg1);
 
     void on_pushButtonGitBranch_clicked();
