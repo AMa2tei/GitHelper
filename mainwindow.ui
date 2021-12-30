@@ -20,19 +20,26 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
-     <widget class="QPushButton" name="pushButtonValidatePath">
-      <property name="text">
-       <string>Validate and Init</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="0">
-     <widget class="QLineEdit" name="lineEditPath">
-      <property name="placeholderText">
-       <string>Path</string>
-      </property>
-     </widget>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLineEdit" name="lineEditPath">
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+        <property name="placeholderText">
+         <string>Path</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonValidatePath">
+        <property name="text">
+         <string>Choose a directory and init</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item row="1" column="0">
      <widget class="QGroupBox" name="groupBoxGitControl">

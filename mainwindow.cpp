@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <QDir>
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -19,7 +20,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonValidatePath_clicked()
 {
-    path = ui->lineEditPath->text();
+    path = QFileDialog::getExistingDirectory(this, tr("Open Directory"),
+                                                            ".",
+                                                            QFileDialog::ShowDirsOnly
+                                                            | QFileDialog::DontUseNativeDialog);
+    ui->lineEditPath->setText(path);
     if(QDir(path).isEmpty())
     {
         if(!ui->lineEditRemoteUrl->text().isEmpty()) {
