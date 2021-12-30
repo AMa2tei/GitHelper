@@ -28,9 +28,12 @@ private slots:
 
     void on_lineEditCommitMessage_textChanged(const QString &arg1);
 
+    void on_pushButtonGitBranch_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString lien;
     QStringList liste;
+    QString path;
 };
 #endif // MAINWINDOW_H

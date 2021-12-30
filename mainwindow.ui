@@ -152,6 +152,13 @@
              </widget>
             </item>
             <item>
+             <widget class="QPushButton" name="pushButtonGitBranch">
+              <property name="text">
+               <string>⏷git branch</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="pushButtonGitMerge">
               <property name="text">
                <string>git merge --&gt; Working Files⏵</string>

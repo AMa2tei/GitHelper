@@ -21,14 +21,15 @@ void MainWindow::on_pushButtonValidatePath_clicked()
 {
     QString lien = ui->lineEditRemoteUrl->text();
     QStringList liste = lien.split("/");
+    path = ui->lineEditPath->text();
     QStringList listeNameProject = liste.at(4).split(".");
-    if(QDir(ui->lineEditPath->text()).isEmpty())
+    if(QDir(path).isEmpty())
     {
-        system(QString("cd " + ui->lineEditPath->text() + " && echo \"# " + listeNameProject.at(0) + "\" >> README.md").toStdString().c_str());
+        system(QString("cd " + path + " && echo \"# " + listeNameProject.at(0) + "\" >> README.md").toStdString().c_str());
     }
-    QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init";
+    QString commandeQString = "cd " + path + " && git init";
     system(commandeQString.toStdString().c_str());
-    QDir directorie(ui->lineEditPath->text());
+    QDir directorie(path);
     ui->comboBoxFilesInDirectory->addItems(directorie.entryList(QDir::Files, QDir::Name));
 
 }
@@ -37,34 +38,32 @@ void MainWindow::on_pushButtonAddComit_clicked()
 {
     QString commandeQString;
     if(ui->lineEditCommitMessage->text().isEmpty()) {
-        commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"Updated " +
-                ui->comboBoxFilesInDirectory->itemText(ui->comboBoxFilesInDirectory->currentIndex()) + "\"" +
-                " && git branch -M main && git push -u origin main";
+        commandeQString = "cd " + path + " && git commit -am \"Updated " +
+                ui->comboBoxFilesInDirectory->itemText(ui->comboBoxFilesInDirectory->currentIndex()) + "\"";
     }
     else {
-        commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"" + ui->lineEditCommitMessage->text() + "\"" +
-                " && git branch -M main && git push -u origin main";
+        commandeQString = "cd " + path + " && git commit -am \"" + ui->lineEditCommitMessage->text() + "\"";
     }
     system(commandeQString.toStdString().c_str());
 }
 
 void MainWindow::on_pushButtonGitPush_clicked()
 {
-    QString commandeQString = "cd " + ui->lineEditPath->text() + " && git push -u origin main";
+    QString commandeQString = "cd " + path + " && git push -u origin main";
     system(commandeQString.toStdString().c_str());
 }
 
 
 void MainWindow::on_pushButtonRemoteAdd_clicked()
 {
-    QString commandeQString = "cd " + ui->lineEditPath->text() + " && git remote add origin " + ui->lineEditRemoteUrl->text();
+    QString commandeQString = "cd " + path + " && git remote add origin " + ui->lineEditRemoteUrl->text();
     system(commandeQString.toStdString().c_str());
 }
 
 
 void MainWindow::on_pushButtonGitStatus_clicked()
 {
-    QString commandeQString = "cd " + ui->lineEditPath->text() + " && git status";
+    QString commandeQString = "cd " + path + " && git status";
     system(commandeQString.toStdString().c_str());
 }
 
@@ -72,5 +71,12 @@ void MainWindow::on_pushButtonGitStatus_clicked()
 void MainWindow::on_lineEditCommitMessage_textChanged(const QString &arg1)
 {
     ui->lineEditCommitMessage->text().isEmpty() ? ui->comboBoxFilesInDirectory->setEnabled(true) : ui->comboBoxFilesInDirectory->setEnabled(false);
+}
+
+
+void MainWindow::on_pushButtonGitBranch_clicked()
+{
+    QString commandeQString = "cd " + path + " && git branch -M main";
+    system(commandeQString.toStdString().c_str());
 }
 
