@@ -33,7 +33,7 @@ void MainWindow::on_pushButtonAddComit_clicked()
 {
     QString commandeQString;
     if(ui->lineEditCommitMessage->text().isEmpty()) {
-        commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"Updated " + ui->lineEditCommitMessage->text() + "\"" +
+        commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"Updated " + ui->comboBoxFilesInDirectory->itemText(ui->comboBoxFilesInDirectory->currentIndex()) + "\"" +
                 " && git branch -M main && git push -u origin main";
     }
     else {
