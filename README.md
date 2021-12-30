@@ -18,3 +18,4 @@ Cette application est destinée à une utilisation graphique de git.
 
 ## A faire :
 - Trouver comment faire un "git status"
+- Voir pour configurer git directement depuis l'application.

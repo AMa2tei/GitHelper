@@ -11,7 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Git Helper</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/new/prefix1/bx-git-branch-blue.svg</normalon>
+   </iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
@@ -152,12 +157,21 @@
               <property name="text">
                <string>⏴Remote &lt;-- git push</string>
               </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/new/prefix1/bx-git-pull-request.svg</normaloff>:/new/prefix1/bx-git-pull-request.svg</iconset>
+              </property>
              </widget>
             </item>
             <item>
              <widget class="QPushButton" name="pushButtonGitBranch">
               <property name="text">
-               <string>⏷git branch</string>
+               <string>git branch main</string>
+              </property>
+              <property name="icon">
+               <iconset>
+                <normalon>:/new/prefix1/bx-git-branch.svg</normalon>
+               </iconset>
               </property>
              </widget>
             </item>
@@ -165,6 +179,10 @@
              <widget class="QPushButton" name="pushButtonGitMerge">
               <property name="text">
                <string>git merge --&gt; Working Files⏵</string>
+              </property>
+              <property name="icon">
+               <iconset resource="resources.qrc">
+                <normaloff>:/new/prefix1/bx-git-merge.svg</normaloff>:/new/prefix1/bx-git-merge.svg</iconset>
               </property>
              </widget>
             </item>
@@ -187,6 +205,10 @@
             <property name="text">
              <string>⏴Branches &lt;-- git commit -a</string>
             </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/new/prefix1/bx-git-commit.svg</normaloff>:/new/prefix1/bx-git-commit.svg</iconset>
+            </property>
            </widget>
           </item>
           <item row="0" column="0">
@@ -196,13 +218,6 @@
             </property>
             <property name="placeholderText">
              <string>Commit message</string>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0">
-           <widget class="QPushButton" name="pushButtonGitStatus">
-            <property name="text">
-             <string>git status</string>
             </property>
            </widget>
           </item>
@@ -229,6 +244,8 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>
