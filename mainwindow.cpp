@@ -25,8 +25,6 @@ void MainWindow::on_pushButtonValidatePath_clicked()
     }
     QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init";
     system(commandeQString.toStdString().c_str());
-    //ui->groupBoxGitControl->setEnabled(true);
-    //ui->pushButtonAddComit->setEnabled(true);
 }
 
 void MainWindow::on_pushButtonAddComit_clicked()
@@ -34,8 +32,6 @@ void MainWindow::on_pushButtonAddComit_clicked()
     QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"" + ui->lineEditCommitMessage->text() + "\"" +
             " && git branch -M main && git push -u origin main";
     system(commandeQString.toStdString().c_str());
-    //ui->pushButtonRemoteAdd->setEnabled(true);
-    //ui->lineEditRemoteUrl->setEnabled(true);
 }
 
 void MainWindow::on_pushButtonGitPush_clicked()
@@ -49,7 +45,6 @@ void MainWindow::on_pushButtonRemoteAdd_clicked()
 {
     QString commandeQString = "cd " + ui->lineEditPath->text() + " && git remote add origin " + ui->lineEditRemoteUrl->text();
     system(commandeQString.toStdString().c_str());
-    //ui->pushButtonGitPush->setEnabled(true);
 }
 
 
