@@ -19,14 +19,18 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonValidatePath_clicked()
 {
+    QString lien = ui->lineEditRemoteUrl->text();
+    QStringList liste = lien.split("/");
+    QStringList listeNameProject = liste.at(4).split(".");
     if(QDir(ui->lineEditPath->text()).isEmpty())
     {
-        system(QString("cd " + ui->lineEditPath->text() + " && echo \"# Title\" >> README.md").toStdString().c_str());
+        system(QString("cd " + ui->lineEditPath->text() + " && echo \"# " + listeNameProject.at(0) + "\" >> README.md").toStdString().c_str());
     }
     QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init";
     system(commandeQString.toStdString().c_str());
     QDir directorie(ui->lineEditPath->text());
     ui->comboBoxFilesInDirectory->addItems(directorie.entryList(QDir::Files, QDir::Name));
+
 }
 
 void MainWindow::on_pushButtonAddComit_clicked()

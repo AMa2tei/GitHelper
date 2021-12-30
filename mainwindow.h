@@ -30,5 +30,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QString lien;
+    QStringList liste;
 };
 #endif // MAINWINDOW_H
