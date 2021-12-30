@@ -31,8 +31,8 @@ void MainWindow::on_pushButtonValidatePath_clicked()
 
 void MainWindow::on_pushButtonAddComit_clicked()
 {
-    QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"" + ui->lineEditCommitMessage->text() + "\""
-            " && git remote add origin " + ui->lineEditRemoteUrl->text() + " && git branch -M main && git push -u origin main";
+    QString commandeQString = "cd " + ui->lineEditPath->text() + " && git init && git commit -am \"" + ui->lineEditCommitMessage->text() + "\"" +
+            " && git branch -M main && git push -u origin main";
     system(commandeQString.toStdString().c_str());
     //ui->pushButtonRemoteAdd->setEnabled(true);
     //ui->lineEditRemoteUrl->setEnabled(true);
