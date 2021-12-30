@@ -22,13 +22,25 @@ private slots:
 
     void on_pushButtonGitPush_clicked();
 
-    void on_pushButtonRemoteAdd_clicked();
-
     void on_pushButtonGitStatus_clicked();
 
     void on_lineEditCommitMessage_textChanged(const QString &arg1);
 
     void on_pushButtonGitBranch_clicked();
+
+    void on_pushButtonGitPull_clicked();
+
+    void on_pushButtonGitFetch_clicked();
+
+    void on_pushButtonGitReset_clicked();
+
+    void on_pushButtonGitResetHard_clicked();
+
+    void on_pushButtonGitRemote_clicked();
+
+    void on_pushButtonGitCheckout_clicked();
+
+    void on_pushButtonGitCheckoutTrack_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -54,13 +54,6 @@ void MainWindow::on_pushButtonGitPush_clicked()
 }
 
 
-void MainWindow::on_pushButtonRemoteAdd_clicked()
-{
-    QString commandeQString = "cd " + path + " && git remote add origin " + ui->lineEditRemoteUrl->text();
-    system(commandeQString.toStdString().c_str());
-}
-
-
 void MainWindow::on_pushButtonGitStatus_clicked()
 {
     QString commandeQString = "cd " + path + " && git status";
@@ -77,6 +70,55 @@ void MainWindow::on_lineEditCommitMessage_textChanged(const QString &arg1)
 void MainWindow::on_pushButtonGitBranch_clicked()
 {
     QString commandeQString = "cd " + path + " && git branch -M main";
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitPull_clicked()
+{
+    QString commandeQString = "cd " + path + " && git pull";
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitFetch_clicked()
+{
+    QString commandeQString = "cd " + path + " && git fetch -a";
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitReset_clicked()
+{
+    QString commandeQString = "cd " + path + " && git reset .";
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitResetHard_clicked()
+{
+    QString commandeQString = "cd " + path + " && git reset --hard .";
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitRemote_clicked()
+{
+    QString commandeQString = "cd " + path + " && git remote add origin " + ui->lineEditRemoteUrl->text();
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitCheckout_clicked()
+{
+    QString commandeQString = "cd " + path + " && git checkout " + ui->lineEditBrancheCheckout->text();
+    system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_pushButtonGitCheckoutTrack_clicked()
+{
+    QString commandeQString = "cd " + path + " && git checkout " + ui->lineEditBrancheCheckout->text() + " --track";
     system(commandeQString.toStdString().c_str());
 }
 

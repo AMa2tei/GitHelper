@@ -47,34 +47,17 @@
           <string>Remote</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_3">
-          <item row="3" column="0">
+          <item row="2" column="0">
            <widget class="QPushButton" name="pushButtonGitFetch">
             <property name="text">
-             <string>git fetch --&gt; Clone⏵</string>
-            </property>
-           </widget>
-          </item>
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButtonGitPull">
-            <property name="text">
-             <string>git pull --&gt; Working Files⏵</string>
+             <string>git fetch -a --&gt; Clone⏵</string>
             </property>
            </widget>
           </item>
           <item row="1" column="0">
-           <widget class="QPushButton" name="pushButtonRemoteAdd">
+           <widget class="QPushButton" name="pushButtonGitPull">
             <property name="text">
-             <string>git remote add origin</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLineEdit" name="lineEditRemoteUrl">
-            <property name="text">
-             <string/>
-            </property>
-            <property name="placeholderText">
-             <string>Remote URL</string>
+             <string>git pull --&gt; Working Files⏵</string>
             </property>
            </widget>
           </item>
@@ -98,13 +81,6 @@
                <string>Clone</string>
               </property>
               <layout class="QGridLayout" name="gridLayout_4">
-               <item row="0" column="0">
-                <widget class="QPushButton" name="pushButtonGitReset">
-                 <property name="text">
-                  <string>git reset --&gt; Branches⏵</string>
-                 </property>
-                </widget>
-               </item>
                <item row="1" column="0">
                 <widget class="QPushButton" name="pushButtonGitResetHard">
                  <property name="text">
@@ -112,10 +88,27 @@
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0">
+               <item row="3" column="0">
                 <widget class="QPushButton" name="pushButtonGitRemote">
                  <property name="text">
                   <string>⏴Remote &lt;-- git remote</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QPushButton" name="pushButtonGitReset">
+                 <property name="text">
+                  <string>git reset --&gt; Branches⏵</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLineEdit" name="lineEditRemoteUrl">
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="placeholderText">
+                  <string>Remote URL</string>
                  </property>
                 </widget>
                </item>
@@ -124,6 +117,16 @@
             </item>
             <item>
              <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QLineEdit" name="lineEditBrancheCheckout">
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="placeholderText">
+                 <string>Branch to Checkout</string>
+                </property>
+               </widget>
+              </item>
               <item>
                <widget class="QPushButton" name="pushButtonGitCheckout">
                 <property name="text">
