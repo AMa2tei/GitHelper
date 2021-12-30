@@ -19,13 +19,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pushButtonValidatePath_clicked()
 {
-    QString lien = ui->lineEditRemoteUrl->text();
-    QStringList liste = lien.split("/");
     path = ui->lineEditPath->text();
-    QStringList listeNameProject = liste.at(4).split(".");
     if(QDir(path).isEmpty())
     {
-        system(QString("cd " + path + " && echo \"# " + listeNameProject.at(0) + "\" >> README.md").toStdString().c_str());
+        if(!ui->lineEditRemoteUrl->text().isEmpty()) {
+            QString lien = ui->lineEditRemoteUrl->text();
+            QStringList liste = lien.split("/");
+            QStringList listeNameProject = liste.at(4).split(".");
+            system(QString("cd " + path + " && echo \"# " + listeNameProject.at(0) + "\" >> README.md").toStdString().c_str());
+        } else {
+            system(QString("cd " + path + " && echo \"# Project\" >> README.md").toStdString().c_str());
+        }
     }
     QString commandeQString = "cd " + path + " && git init";
     system(commandeQString.toStdString().c_str());

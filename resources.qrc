@@ -1,12 +1,9 @@
 <RCC>
     <qresource prefix="/new/prefix1">
-        <file>bx-git-branch.svg</file>
-        <file>bx-git-commit.svg</file>
-        <file>bx-git-merge.svg</file>
-        <file>git-branch-regular-24.png</file>
-        <file>git-commit-regular-24.png</file>
-        <file>git-merge-regular-24.png</file>
-        <file>bx-git-pull-request.svg</file>
-        <file>bx-git-branch-blue.svg</file>
+        <file>assets/bx-git-branch-blue.svg</file>
+        <file>assets/bx-git-branch.svg</file>
+        <file>assets/bx-git-commit.svg</file>
+        <file>assets/bx-git-merge.svg</file>
+        <file>assets/bx-git-pull-request.svg</file>
     </qresource>
 </RCC>

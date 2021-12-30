@@ -15,7 +15,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normalon>:/new/prefix1/bx-git-branch-blue.svg</normalon>
+    <normalon>:/new/prefix1/assets/bx-git-branch-blue.svg</normalon>
    </iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -43,6 +43,42 @@
        <string>Git Control</string>
       </property>
       <layout class="QGridLayout" name="gridLayout_7">
+       <item row="0" column="2">
+        <widget class="QGroupBox" name="groupBoxGitWorkingFiles">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="title">
+          <string>Working Files</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="2" column="0">
+           <widget class="QPushButton" name="pushButtonAddComit">
+            <property name="text">
+             <string>⏴Branches &lt;-- git commit -a</string>
+            </property>
+            <property name="icon">
+             <iconset resource="resources.qrc">
+              <normaloff>:/new/prefix1/assets/git-commit-regular-24.png</normaloff>:/new/prefix1/assets/git-commit-regular-24.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLineEdit" name="lineEditCommitMessage">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>Commit message</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QComboBox" name="comboBoxFilesInDirectory"/>
+          </item>
+         </layout>
+        </widget>
+       </item>
        <item row="0" column="0">
         <widget class="QGroupBox" name="groupBoxGitRemote">
          <property name="enabled">
@@ -159,7 +195,7 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/new/prefix1/bx-git-pull-request.svg</normaloff>:/new/prefix1/bx-git-pull-request.svg</iconset>
+                <normaloff>:/new/prefix1/assets/bx-git-pull-request.svg</normaloff>:/new/prefix1/assets/bx-git-pull-request.svg</iconset>
               </property>
              </widget>
             </item>
@@ -170,7 +206,7 @@
               </property>
               <property name="icon">
                <iconset>
-                <normalon>:/new/prefix1/bx-git-branch.svg</normalon>
+                <normalon>:/new/prefix1/assets/bx-git-branch.svg</normalon>
                </iconset>
               </property>
              </widget>
@@ -182,47 +218,11 @@
               </property>
               <property name="icon">
                <iconset resource="resources.qrc">
-                <normaloff>:/new/prefix1/bx-git-merge.svg</normaloff>:/new/prefix1/bx-git-merge.svg</iconset>
+                <normaloff>:/new/prefix1/assets/bx-git-merge.svg</normaloff>:/new/prefix1/assets/bx-git-merge.svg</iconset>
               </property>
              </widget>
             </item>
            </layout>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QGroupBox" name="groupBoxGitWorkingFiles">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="title">
-          <string>Working Files</string>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <item row="2" column="0">
-           <widget class="QPushButton" name="pushButtonAddComit">
-            <property name="text">
-             <string>⏴Branches &lt;-- git commit -a</string>
-            </property>
-            <property name="icon">
-             <iconset resource="resources.qrc">
-              <normaloff>:/new/prefix1/bx-git-commit.svg</normaloff>:/new/prefix1/bx-git-commit.svg</iconset>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0">
-           <widget class="QLineEdit" name="lineEditCommitMessage">
-            <property name="text">
-             <string/>
-            </property>
-            <property name="placeholderText">
-             <string>Commit message</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QComboBox" name="comboBoxFilesInDirectory"/>
           </item>
          </layout>
         </widget>
