@@ -288,17 +288,14 @@
     <property name="title">
      <string>About</string>
     </property>
-    <property name="icon">
-     <iconset>
-      <normalon>:/new/prefix1/assets/question-line.svg</normalon>
-     </iconset>
-    </property>
     <property name="separatorsCollapsible">
      <bool>false</bool>
     </property>
     <property name="toolTipsVisible">
      <bool>false</bool>
     </property>
+    <addaction name="actionAbout_this_app"/>
+    <addaction name="action_About_Qt"/>
    </widget>
    <addaction name="menuFichiers"/>
    <addaction name="menuAbout"/>
@@ -323,6 +320,26 @@
    </property>
    <property name="shortcut">
     <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="actionAbout_this_app">
+   <property name="icon">
+    <iconset>
+     <normalon>:/new/prefix1/assets/question-line.svg</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About this app</string>
+   </property>
+  </action>
+  <action name="action_About_Qt">
+   <property name="icon">
+    <iconset>
+     <normalon>:/new/prefix1/assets/Qt_logo_2016.svg</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;About Qt</string>
    </property>
   </action>
  </widget>

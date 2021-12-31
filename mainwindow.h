@@ -52,6 +52,10 @@ private slots:
 
     void on_pushButtonGitAdd_clicked();
 
+    void on_action_About_Qt_triggered();
+
+    void on_actionAbout_this_app_triggered();
+
 private:
     Ui::MainWindow *ui;
     QString lien;

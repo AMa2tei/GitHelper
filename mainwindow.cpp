@@ -211,3 +211,21 @@ void MainWindow::on_pushButtonGitAdd_clicked()
     system(commandeQString.toStdString().c_str());
 }
 
+
+void MainWindow::on_action_About_Qt_triggered()
+{
+    QApplication::aboutQt();
+}
+
+#include <QMessageBox>
+void MainWindow::on_actionAbout_this_app_triggered()
+{
+    QMessageBox::about(this,
+                       "About",
+                       "This programm uses Qt version 6.2.2. See the \"About Qt\" section to learn more about it.\n"
+                       "This app is an GUI implementation of git, but Git must be installed on this computer because it only call the terminal and run the commands in.\n"
+                       "This programm is free and open source.\n"
+                       "Copyright (C) 2021 Antoine Mattei and others contributors.\n"
+                       "Git is a free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.");
+}
+
