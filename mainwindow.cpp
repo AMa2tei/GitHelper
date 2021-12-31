@@ -31,7 +31,7 @@ MainWindow::~MainWindow()
 }
 
 std::string exec(const char* cmd) {
-    std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
+    std::shared_ptr<FILE> pipe(_popen(cmd, "r"), _pclose);
     if (!pipe) return "ERROR";
     char buffer[128];
     std::string result = "";
@@ -63,6 +63,7 @@ void MainWindow::on_pushButtonValidatePath_clicked()
     QString commandeQString = "cd " + path + " && git init";
     system(commandeQString.toStdString().c_str());
     QDir directorie(path);
+    ui->comboBoxFilesInDirectory->clear();
     ui->comboBoxFilesInDirectory->addItems(directorie.entryList(QDir::Dirs | QDir::Files | QDir::NoDotAndDotDot, QDir::Name));
 
 }
