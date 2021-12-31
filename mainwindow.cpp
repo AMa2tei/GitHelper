@@ -142,3 +142,10 @@ void MainWindow::on_actionExit_triggered()
     close();
 }
 
+#include <QProcess>
+void MainWindow::on_pushButton_clicked()
+{
+    QString programm = "git status";
+    QProcess::execute(programm);
+}
+
