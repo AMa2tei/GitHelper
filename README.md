@@ -15,11 +15,12 @@ Cette application est destinée à une utilisation graphique de Git.
 - Commande pull
 - Commande fetch
 - Commande push
+- Commande git status
+- Commande git diff
 - Configurer Git dans l'application.
 
 ## A faire :
-- Trouver comment faire un "git status"
-- Trouver comment faire un "git diff"
+- Ajouter des couleurs lors de l'appel à une commande "git diff"
 
 # GitHelper
 This app is for a GUI use of Git
@@ -38,8 +39,9 @@ This app is for a GUI use of Git
 - Command pull
 - Command fetch
 - Command push
+- Command git status
+- Command git diff
 - Configure Git in the app
 
 ## To do :
-- Find how to do a "git status"
-- Find how to do a "git diff"
+- Add color when a "git diff" command is called

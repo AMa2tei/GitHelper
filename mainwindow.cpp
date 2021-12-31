@@ -2,8 +2,16 @@
 #include "ui_mainwindow.h"
 #include <stdlib.h>
 #include <iostream>
+#include <cstdarg>
+#include <string>
+#include <fstream>
+#include <memory>
+#include <cstdio>
+
 #include <QDir>
 #include <QFileDialog>
+#include <QFile>
+
 #include "gitconfig.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -22,6 +30,17 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+std::string exec(const char* cmd) {
+    std::shared_ptr<FILE> pipe(popen(cmd, "r"), pclose);
+    if (!pipe) return "ERROR";
+    char buffer[128];
+    std::string result = "";
+    while (!feof(pipe.get())) {
+        if (fgets(buffer, 128, pipe.get()) != NULL)
+            result += buffer;
+    }
+    return result;
+}
 
 void MainWindow::on_pushButtonValidatePath_clicked()
 {
@@ -142,10 +161,45 @@ void MainWindow::on_actionExit_triggered()
     close();
 }
 
-#include <QProcess>
-void MainWindow::on_pushButton_clicked()
+
+void MainWindow::on_pushButtonGitStatus_clicked()
 {
-    QString programm = "git status";
-    QProcess::execute(programm);
+    QString commandeQString = "cd " + path + " && git status";
+    std::string str = exec(commandeQString.toStdString().c_str());
+    std::ofstream output;
+
+    QString pathToBufferText = path;
+    pathToBufferText.append("/log.txt");
+
+    output.open(pathToBufferText.toStdString(), std::ios_base::app);
+
+    if (output.is_open())
+        output << exec("echo Commande git status le %date% a %time% :") << "\n" << str << "\n\n";
+
+    output.close();
+
+    ui->textEditDebug->clear();
+    ui->textEditDebug->append(QString::fromStdString(str));
+}
+
+
+void MainWindow::on_pushButtonGitDiff_clicked()
+{
+    QString commandeQString = "cd " + path + " && git diff";
+    std::string str = exec(commandeQString.toStdString().c_str());
+    std::ofstream output;
+
+    QString pathToBufferText = path;
+    pathToBufferText.append("/log.txt");
+
+    output.open(pathToBufferText.toStdString(), std::ios_base::app);
+
+    if (output.is_open())
+        output << exec("echo Commande git diff le %date% a %time% :") << "\n" << str << "\n\n";
+
+    output.close();
+
+    ui->textEditDebug->clear();
+    ui->textEditDebug->append(QString::fromStdString(str));
 }
 

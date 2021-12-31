@@ -46,7 +46,9 @@ private slots:
 
     void on_actionExit_triggered();
 
-    void on_pushButton_clicked();
+    void on_pushButtonGitStatus_clicked();
+
+    void on_pushButtonGitDiff_clicked();
 
 private:
     Ui::MainWindow *ui;
