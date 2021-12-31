@@ -38,10 +38,10 @@
           <string>Working Files</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
-          <item row="1" column="0">
+          <item row="2" column="0">
            <widget class="QComboBox" name="comboBoxFilesInDirectory"/>
           </item>
-          <item row="0" column="0">
+          <item row="1" column="0">
            <widget class="QLineEdit" name="lineEditCommitMessage">
             <property name="text">
              <string/>
@@ -51,10 +51,10 @@
             </property>
            </widget>
           </item>
-          <item row="2" column="0">
+          <item row="3" column="0">
            <widget class="QPushButton" name="pushButtonAddComit">
             <property name="text">
-             <string>⏴Branches &lt;-- git commit -a</string>
+             <string>⏴Branches &lt;-- git commit -m</string>
             </property>
             <property name="icon">
              <iconset>
@@ -63,16 +63,23 @@
            </widget>
           </item>
           <item row="4" column="0">
+           <widget class="QPushButton" name="pushButtonGitDiff">
+            <property name="text">
+             <string>git diff</string>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="0">
            <widget class="QPushButton" name="pushButtonGitStatus">
             <property name="text">
              <string>git status</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QPushButton" name="pushButtonGitDiff">
+          <item row="0" column="0">
+           <widget class="QPushButton" name="pushButtonGitAdd">
             <property name="text">
-             <string>git diff</string>
+             <string>git add .</string>
             </property>
            </widget>
           </item>

@@ -204,3 +204,10 @@ void MainWindow::on_pushButtonGitDiff_clicked()
     ui->textEditDebug->append(QString::fromStdString(str));
 }
 
+
+void MainWindow::on_pushButtonGitAdd_clicked()
+{
+    QString commandeQString = "cd " + path + " && git add .";
+    system(commandeQString.toStdString().c_str());
+}
+

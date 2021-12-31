@@ -50,6 +50,8 @@ private slots:
 
     void on_pushButtonGitDiff_clicked();
 
+    void on_pushButtonGitAdd_clicked();
+
 private:
     Ui::MainWindow *ui;
     QString lien;
