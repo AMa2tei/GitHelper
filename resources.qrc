@@ -7,5 +7,6 @@
         <file>assets/bx-git-pull-request.svg</file>
         <file>assets/user-settings-line.svg</file>
         <file>assets/question-line.svg</file>
+        <file>assets/user-settings-line-blue.svg</file>
     </qresource>
 </RCC>

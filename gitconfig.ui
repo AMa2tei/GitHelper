@@ -11,7 +11,12 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Git config</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normalon>:/new/prefix1/assets/user-settings-line-blue.svg</normalon>
+   </iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
