@@ -2,7 +2,7 @@
 Cette application est destinée à une utilisation graphique de Git.
 
 ## Pour l'utiliser :
-- Configurer [Git](https://git-scm.com/book/fr/v2/Personnalisation-de-Git-Configuration-de-Git) dans son terminal AVANT de l'utiliser (sinon ça ne marchera pas).
+- Configurer [Git](https://git-scm.com/book/fr/v2/Personnalisation-de-Git-Configuration-de-Git) dans File --> Configure.
 - Profitez !
 
 ## Actuellement disponible :
@@ -26,7 +26,7 @@ Cette application est destinée à une utilisation graphique de Git.
 This app is for a GUI use of Git
 
 ## To use it :
-- Configure [Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) in it's terminal BEFORE using it (else it won't work).
+- Configure [Git](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration) in File --> Configure.
 - Enjoy !
 
 ## Already available :
