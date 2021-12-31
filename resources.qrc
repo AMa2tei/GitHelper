@@ -5,5 +5,7 @@
         <file>assets/bx-git-commit.svg</file>
         <file>assets/bx-git-merge.svg</file>
         <file>assets/bx-git-pull-request.svg</file>
+        <file>assets/user-settings-line.svg</file>
+        <file>assets/question-line.svg</file>
     </qresource>
 </RCC>

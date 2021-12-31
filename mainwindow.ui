@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1256</width>
-    <height>435</height>
+    <height>437</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -248,8 +248,55 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFichiers">
+    <property name="title">
+     <string>Files</string>
+    </property>
+    <addaction name="actionConfigure"/>
+    <addaction name="separator"/>
+    <addaction name="actionExit"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>About</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normalon>:/new/prefix1/assets/question-line.svg</normalon>
+     </iconset>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <addaction name="menuFichiers"/>
+   <addaction name="menuAbout"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionConfigure">
+   <property name="icon">
+    <iconset>
+     <normalon>:/new/prefix1/assets/user-settings-line.svg</normalon>
+    </iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Configure</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
  </widget>
  <resources>
   <include location="resources.qrc"/>

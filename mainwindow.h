@@ -15,6 +15,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+//public slots:
+
 private slots:
     void on_pushButtonValidatePath_clicked();
 
@@ -39,6 +41,10 @@ private slots:
     void on_pushButtonGitCheckout_clicked();
 
     void on_pushButtonGitCheckoutTrack_clicked();
+
+    void on_actionConfigure_triggered();
+
+    void on_actionExit_triggered();
 
 private:
     Ui::MainWindow *ui;

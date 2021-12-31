@@ -4,12 +4,17 @@
 #include <iostream>
 #include <QDir>
 #include <QFileDialog>
+#include "gitconfig.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QObject::connect(
+                ui->actionConfigure, &QAction::triggered,
+                this, [=](){ this->on_actionConfigure_triggered();}
+                );
 }
 
 MainWindow::~MainWindow()
@@ -122,5 +127,18 @@ void MainWindow::on_pushButtonGitCheckoutTrack_clicked()
 {
     QString commandeQString = "cd " + path + " && git checkout " + ui->lineEditBrancheCheckout->text() + " --track";
     system(commandeQString.toStdString().c_str());
+}
+
+
+void MainWindow::on_actionConfigure_triggered()
+{
+    GitConfig gc;
+    gc.exec();
+}
+
+
+void MainWindow::on_actionExit_triggered()
+{
+    close();
 }
 
